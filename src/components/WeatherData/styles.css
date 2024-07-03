@@ -1,0 +1,21 @@
+.weather-data {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .weather-data-value {
+    margin: 0 0 10px 0;
+    color: white;
+    font-size: 24px;
+  }
+  
+  .weather-data-label {
+    margin: 0;
+    color: rgb(0, 86, 120);
+    font-size: 16px;
+  }
+  

@@ -1,4 +1,6 @@
-export const getWeatherData = async (lat, lon, isMetric = false) => {
+import { convertToLocalTime } from "../util/convertToLocalTime";
+
+export const getWeatherData = async (lat, lon, isMetric) => {
   try {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?units=${
@@ -9,7 +11,14 @@ export const getWeatherData = async (lat, lon, isMetric = false) => {
       throw new Error(`Error: ${response.status} ${response.statusText}`);
     }
     const data = await response.json();
-    return data;
+    return {
+      ...data,
+      sys: {
+        ...data.sys,
+        sunset: convertToLocalTime(data.sys.sunset),
+        sunrise: convertToLocalTime(data.sys.sunrise),
+      },
+    };
   } catch (error) {
     console.error("Error fetching current weather data:", error);
     throw error;

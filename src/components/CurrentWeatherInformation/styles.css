@@ -1,0 +1,18 @@
+.current-weather-information-container {
+  display: flex;
+  height: 100%;
+  width: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.temperature {
+  font-size: 96px;
+  margin: 0;
+}
+
+.weather-details {
+    font-size: 24px;
+    margin: 0;
+}

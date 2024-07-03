@@ -31,8 +31,6 @@ const HomePage = () => {
     fetchWeatherData();
   }, []);
 
-  console.log(forecast);
-
   return (
     <div className="home-page">
       <Grid container spacing={2} sx={{ height: "fit-content" }}>
