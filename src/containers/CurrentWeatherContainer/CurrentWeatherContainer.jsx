@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import WeatherIcon from "../../components/WeatherIcon";
 import CircularProgress from "@mui/material/CircularProgress";
 import "./styles.css";
 import { Grid } from "@mui/material";
@@ -8,15 +9,6 @@ import { toInt } from "../../util/toInt";
 const moment = require("moment");
 
 const CurrentWeatherContainer = ({ weatherData, loading, cityName }) => {
-  const [icon, setIcon] = useState(
-    "http://openweathermap.org/img/wn/4d@4x.png"
-  );
-
-  useEffect(() => {
-    const iconCode = weatherData?.weather && weatherData?.weather[0]?.icon;
-    setIcon(`http://openweathermap.org/img/wn/${iconCode}@4x.png`);
-  }, [weatherData]);
-
   return (
     <div className="current-weather-container">
       <Grid container sx={{ height: "100%" }}>
@@ -28,7 +20,10 @@ const CurrentWeatherContainer = ({ weatherData, loading, cityName }) => {
           <div className="icon-container">
             {!loading ? (
               <>
-                <img src={icon} alt="Weather icon" />
+                <WeatherIcon
+                  icon={weatherData?.weather?.[0]?.icon}
+                  size={256}
+                />
                 <CurrentWeatherInformation weatherData={weatherData} />
               </>
             ) : (
