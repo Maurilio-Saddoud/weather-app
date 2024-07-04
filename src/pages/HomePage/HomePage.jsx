@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CurrentWeatherContainer from "../../containers/CurrentWeatherContainer";
+import ExtendedForcastContainer from "../../containers/ExtendedForecastContainer";
 import Grid from "@mui/material/Grid";
 import "./styles.css";
 import { getWeatherData } from "../../api/getWeatherData";
@@ -42,6 +43,18 @@ const HomePage = () => {
         >
           <CurrentWeatherContainer
             weatherData={weatherData}
+            loading={loading}
+            cityName={cityName}
+          />
+        </Grid>
+        <Grid
+          className="extended-forecast-container-grid"
+          item
+          xs={12}
+          sx={{ height: "50vh", padding: "1rem 0 1rem 1rem" }}
+        >
+          <ExtendedForcastContainer
+            forecast={forecast}
             loading={loading}
             cityName={cityName}
           />

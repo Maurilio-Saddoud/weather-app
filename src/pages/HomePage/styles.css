@@ -9,4 +9,15 @@
   flex-direction: column;
 }
 
-
+@media (max-width: 900px) {
+  .home-page {
+    height: fit-content;
+  }
+  .current-weather-container-grid {
+    height: fit-content !important;
+  }
+  .extended-forecast-container-grid {
+    height: fit-content !important;
+    padding-bottom: 1rem !important;
+  }
+}

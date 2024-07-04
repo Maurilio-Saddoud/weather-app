@@ -1,0 +1,46 @@
+.forecast-card-container {
+  border-radius: 1rem;
+  padding: 5px;
+  height: 100%;
+}
+
+.card {
+  display: flex;
+  border-radius: 1rem;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 5px;
+  height: 100%;
+  align-items: center;
+}
+
+.forecast-date {
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+}
+
+.forecast-thumbnail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.expanded-forecast {
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .forecast-card-container {
+    width: 100% !important;
+  }
+  .current-weather-container-grid {
+    height: fit-content !important;
+  }
+  .forecast-card-container {
+    padding-bottom: 1rem;
+  }
+}
