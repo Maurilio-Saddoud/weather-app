@@ -1,12 +1,12 @@
 import moment from "moment";
 import { convertToLocalTime } from "../util/convertToLocalTime";
 
-export const getFiveDayForecast = async (lat, lon, isMetric = false) => {
+export const getFiveDayForecast = async (lat, lon, isMetric) => {
   try {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/forecast?units=${
         isMetric ? "metric" : "imperial"
-      }&lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}`
+      }&lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     );
     if (!response.ok) {
       throw new Error(`Error: ${response.status} ${response.statusText}`);
@@ -95,8 +95,8 @@ const createDailySummaries = (groupedData, timezone) => {
       tempMin,
       weatherDescription,
       weatherIcon,
-      sunrise: convertToLocalTime(sunrise),
-      sunset: convertToLocalTime(sunset),
+      sunrise: convertToLocalTime(sunrise, timezone),
+      sunset: convertToLocalTime(sunset, timezone),
       timezone: `UTC${timezone >= 0 ? "+" : ""}${timezone / 3600}`,
     };
   });

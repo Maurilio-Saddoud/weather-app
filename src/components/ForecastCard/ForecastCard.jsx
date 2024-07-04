@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { CircularProgress } from "@mui/material";
 import { Grid } from "@mui/material";
@@ -39,8 +39,7 @@ const ForecastCard = ({
         className="card"
         style={{
           justifyContent: openCard === id ? "space-between" : "center",
-          cursor: wideScreen ? "default" : "pointer"
-          
+          cursor: wideScreen ? "default" : "pointer",
         }}
       >
         {loading ? (

@@ -31,7 +31,13 @@ const CurrentWeatherContainer = ({ weatherData, loading, cityName }) => {
             )}
           </div>
         </Grid>
-        <Grid item xs={12} md={6} sx={{ height: "fit-content" }}>
+        <Grid
+          className="weather-data-container-grid"
+          item
+          xs={12}
+          md={6}
+          sx={{ height: "40vh" }}
+        >
           <div className="weather-data-container">
             {loading ? (
               <CircularProgress />

@@ -7,13 +7,22 @@
   color: white;
 }
 
+.current-weather-container-grid {
+  min-height: 40vh;
+}
+
 .weather-data-container {
   width: 100%;
   display: flex;
-  height: fit-content;
+  height: 100%;
+  min-height: 40vh;
   align-items: center;
   justify-content: center;
   border-left: 1px solid white;
+}
+
+.weather-data-container-grid {
+  min-height: 40vh;
 }
 
 .icon-container {
@@ -42,5 +51,8 @@
   .weather-data-container {
     border-top: 1px solid white;
     border-left: none;
+  }
+  .weather-data-container-grid {
+    height: fit-content !important;
   }
 }

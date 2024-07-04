@@ -9,6 +9,14 @@
   flex-direction: column;
 }
 
+.metric-system-toggle {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 @media (max-width: 900px) {
   .home-page {
     height: fit-content;

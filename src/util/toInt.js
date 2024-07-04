@@ -1,3 +1,3 @@
-export const toInt = (temp_max) => {
-  return Math.round(temp_max);
+export const toInt = (float) => {
+  return Math.round(float);
 };
