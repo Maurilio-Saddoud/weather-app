@@ -8,10 +8,8 @@ Follow these steps to get the React Weather App running on your local machine.
 Clone the repository using the following command:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Maurilio-Saddoud/weather-app.git
 ```
-
-Replace `<repository-url>` with the actual URL of the repository.
 
 ## Step 2: Install Dependencies
 
